@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sabores Naza – Cardápio Online</title>
+  <meta name="description" content="Cardápio online da Sabores Naza – docinhos, paçoca caseira, trufas e toffee." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --vinho: #6e1e1e;
+      /* cor base do logo */
+      --dourado: #f0c36a;
+      /* acento do logo */
+      --bege: #fff6ea;
+      /* fundo claro */
+      --texto: #2b2b2b;
+      --card: #ffffff;
+      --shadow: 0 10px 25px rgba(0, 0, 0, .08);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--texto);
+      background: var(--bege);
+    }
+
+    /* ======= Header ======= */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: #fff;
+      box-shadow: 0 2px 18px rgba(0, 0, 0, .06);
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none
+    }
+
+    .brand img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover
+    }
+
+    .brand span {
+      font-weight: 800;
+      letter-spacing: .5px;
+      color: var(--vinho)
+    }
+
+    .links {
+      display: flex;
+      gap: 18px
+    }
+
+    .links a {
+      color: var(--texto);
+      text-decoration: none;
+      font-weight: 600
+    }
+
+    .links a:hover {
+      color: var(--vinho)
+    }
+
+    .menu-btn {
+      display: none;
+      border: none;
+      background: transparent;
+      font-size: 28px;
+    }
+
+    /* ======= Hero ======= */
+    .hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 70px 18px;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 28px;
+      align-items: center
+    }
+
+    .kicker {
+      display: inline-block;
+      background: var(--vinho);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: .6px
+    }
+
+    .hero h1 {
+      margin: 10px 0 12px;
+      font-size: 44px;
+      line-height: 1.1;
+      color: var(--vinho)
+    }
+
+    .hero p {
+      margin: 0 0 22px;
+      font-size: 18px;
+      opacity: .85
+    }
+
+    .cta {
+      display: flex;
+      gap: 12px
+    }
+
+    .btn {
+      appearance: none;
+      border: 0;
+      padding: 12px 18px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 700
+    }
+
+    .btn-primary {
+      background: var(--dourado)
+    }
+
+    .btn-primary:hover {
+      filter: brightness(.95)
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--vinho);
+      color: var(--vinho)
+    }
+
+    .btn-outline:hover {
+      background: rgba(110, 30, 30, .06)
+    }
+
+    .hero figure {
+      margin: 0;
+      display: flex;
+      justify-content: center
+    }
+
+    .hero img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 50%;
+      box-shadow: var(--shadow);
+      background: #fff
+    }
+
+    /* ======= Produtos ======= */
+    section {
+      padding: 56px 18px
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: auto
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px
+    }
+
+    .section-title h2 {
+      margin: 0;
+      color: var(--vinho)
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column
+    }
+
+    .card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover
+    }
+
+    .card-body {
+      padding: 14px 16px 18px
+    }
+
+    .price {
+      color: var(--vinho);
+      font-weight: 800
+    }
+
+    .badge {
+      display: inline-block;
+      background: #ffe9b9;
+      color: #7a4b00;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-left: 8px
+    }
+
+    /* ======= Sobre ======= */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: center
+    }
+
+    .about .blob {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow)
+    }
+
+    /* ======= Contato ======= */
+    .contact {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 22px
+    }
+
+    form {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow)
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin: 8px 0 6px
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px 12px;
+      border: 1px solid #e6d8c5;
+      border-radius: 12px;
+      font: inherit;
+      background: #fffdf9
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical
+    }
+
+    .social {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow)
+    }
+
+    .social a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--texto);
+      padding: 10px 0
+    }
+
+    .social svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--vinho)
+    }
+
+    /* ======= Footer ======= */
+    footer {
+      padding: 26px 18px;
+      background: #fff;
+      border-top: 1px solid #f1e6d6;
+      text-align: center;
+      color: #7a6c5e
+    }
+
+    /* ======= Responsivo ======= */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center
+      }
+
+      .cta {
+        justify-content: center
+      }
+
+      .grid {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .about {
+        grid-template-columns: 1fr
+      }
+
+      .contact {
+        grid-template-columns: 1fr
+      }
+    }
+
+    @media (max-width: 650px) {
+      .links {
+        display: none
+      }
+
+      .menu-btn {
+        display: block
+      }
+
+      .grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    /* mobile nav */
+    .mobile {
+      display: none;
+      position: fixed;
+      inset: 66px 16px auto 16px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 12px
+    }
+
+    .mobile a {
+      display: block;
+      padding: 10px 6px;
+      color: var(--texto);
+      text-decoration: none;
+      font-weight: 700
+    }
+
+    .mobile a+a {
+      border-top: 1px dashed #eee
+    }
+
+    .mobile.open {
+      display: block
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a class="brand" href="#topo">
+        <img src="assets/img/saboresnaza.jpeg" alt="Logo Sabores Naza" />
+        <span>Sabores Naza</span>
+      </a>
+      <div class="links" aria-label="Navegação principal">
+        <a href="#produtos">Produtos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <button class="menu-btn" aria-label="Abrir menu"
+        onclick="document.querySelector('.mobile').classList.toggle('open')">☰</button>
+    </nav>
+    <div class="mobile" role="dialog" aria-modal="true">
+      <a href="#produtos" onclick="this.closest('.mobile').classList.remove('open')">Produtos</a>
+      <a href="#sobre" onclick="this.closest('.mobile').classList.remove('open')">Sobre</a>
+      <a href="#contato" onclick="this.closest('.mobile').classList.remove('open')">Contato</a>
+    </div>
+  </header>
+
+  <main id="topo">
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <span class="kicker">Feito com carinho</span>
+          <h1>Nossas Bebidas</h1>
+
+          <div class="cta">
+            <a href="#produtos" class="btn btn-primary">Ver cardápio</a>
+
+          </div>
+        </div>
+        <figure>
+          <img src="assets/img/logodireito.jpeg" alt="Sabores Naza" />
+        </figure>
+      </div>
+    </section>
+
+    <section id="produtos">
+      <div class="wrap-2">
+        <div class="section-title">
+          <h2>Cardápio em destaque</h2>
+          <small>Atualizado semanalmente</small>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <img src="assets/img/nativo.jpeg" alt="Nativo" />
+            <div class="card-body">
+              <h3>Nativo</span></h3>
+              <p class="price">R$ 2,50 / unidade</p>
+              <p>Suco Geladinho.</p>
+
+
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="assets/img/istockphoto-487787108-612x612.jpeg" alt="Coca-cola" />
+            <div class="card-body">
+              <h3>coca-cola</span></h3>
+              <p class="price">R$ 2,50 / unidade</p>
+              <p>Se refresque com Coca-cola geladinho.</p>
+
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="assets/img/Guaraná.jpeg" alt="Guaraná" />
+            <div class="card-body">
+              <h3>Guaraná</span></h3>
+              <p class="price">R$ 3,50 / unidade</p>
+              <p>Se refresque</p>
+
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="assets/img/achocolatado.jpeg" alt="Achocolatado" />
+            <div class="card-body">
+              <h3>Achocolatado</span></h3>
+              <p class="price">R$ 2,50 / unidade</p>
+              <p>chocolate geladiho </p>
+
+            </div>
+          </article>
+
+
+
+
+
+
+        </div>
+        </article>
+      </div>
+      </div>
+    </section>
+
+
+
+
+    
+          </div>
+        </form>
+        <div class="social">
+          <h3 style="margin-top:0; color:var(--vinho)">Redes & contato</h3>
+          <a href="#" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M20.52 3.48A11.94 11.94 0 0 0 12.05 0C5.49 0 .17 5.32.17 11.88c0 2.1.55 4.14 1.6 5.96L0 24l6.36-1.66a11.87 11.87 0 0 0 5.69 1.45h.01c6.56 0 11.88-5.32 11.88-11.88 0-3.18-1.24-6.17-3.42-8.43Zm-8.47 18.2h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.77.98 1.01-3.67-.24-.38a9.87 9.87 0 0 1-1.52-5.29C2.12 6.41 6.47 2.06 12.05 2.06a9.92 9.92 0 0 1 7.04 2.92 9.83 9.83 0 0 1 2.92 7.03c0 5.58-4.35 9.93-9.96 9.93Zm5.47-7.42c-.3-.15-1.77-.86-2.05-.96-.28-.1-.48-.15-.69.15-.21.3-.79.96-.97 1.16-.18.2-.36.22-.66.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.14-.14.3-.36.45-.54.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.07-.15-.69-1.65-.94-2.27-.25-.6-.5-.52-.69-.53l-.58-.01c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.88 1.21 3.08.15.2 2.09 3.19 5.07 4.47.7.3 1.25.47 1.68.6.71.23 1.35.2 1.86.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35Z" />
+            </svg>
+            WhatsApp: (11) 90000-0000
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M17.5 0h-11A6.5 6.5 0 0 0 0 6.5v11A6.5 6.5 0 0 0 6.5 24h11a6.5 6.5 0 0 0 6.5-6.5v-11A6.5 6.5 0 0 0 17.5 0Zm4.5 17.5A4.5 4.5 0 0 1 17.5 22h-11A4.5 4.5 0 0 1 2 17.5v-11A4.5 4.5 0 0 1 6.5 2h11A4.5 4.5 0 0 1 22 6.5v11ZM12 5.8a6.2 6.2 0 1 0 0 12.4A6.2 6.2 0 0 0 12 5.8Zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM18.4 4.8a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8Z" />
+            </svg>
+            @saboresnaza
+          </a>
+          <a href="mailto:contato@saboresnaza.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M22 4H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm-1.4 4.25-7.64 5.73a2 2 0 0 1-2.38 0L2.94 8.25a1 1 0 1 1 1.2-1.6L12 11l7.86-4.35a1 1 0 1 1 1.2 1.6Z" />
+            </svg>
+            contato@saboresnaza.com
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Sabores Naza — Projeto escolar. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    // Ano automático no rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
+
+<!--verificar o que vai fica na página, mudar o conteudo forme a necessidade e deletar aquilo que não precisa.-->
