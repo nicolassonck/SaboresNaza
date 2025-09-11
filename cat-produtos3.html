@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-index.css">
   <style>
     :root {
       --vinho: #6e1e1e;
@@ -399,13 +400,25 @@
         <img src="assets/img/saboresnaza.jpeg" alt="Logo Sabores Naza" />
         <span>Sabores Naza</span>
       </a>
-      <div class="links" aria-label="Navegação principal">
-        <a href="#produtos">Produtos</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#contato">Contato</a>
-      </div>
-      <button class="menu-btn" aria-label="Abrir menu"
-        onclick="document.querySelector('.mobile').classList.toggle('open')">☰</button>
+      <div class="menu-container">
+        <ul class="menu-list">
+            <li><a href="index.html">Inicial</a></li>
+            
+            <li class="dropdown">
+                <a href="#produtos">Produtos</a>
+                <div class="dropdown-content">
+                    <a href="cat-produtos.html">Salgados</a>
+                    <a href="cat-produtos2.html">Doces</a>
+                    <a href="cat-produtos3.html">Bebidas</a>
+                    <a href="cat-produtos4.html">Salgadinhos</a>
+                    <a href="#outros">Outros</a>
+                </div>
+            </li>
+            
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </div>
     </nav>
     <div class="mobile" role="dialog" aria-modal="true">
       <a href="#produtos" onclick="this.closest('.mobile').classList.remove('open')">Produtos</a>

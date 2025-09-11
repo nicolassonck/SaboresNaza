@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-  <button onclick="window.location.href='index.html'">Voltar</button>
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sabores Naza – Cardápio Online</title>
-  <meta name="description" content="Cardápio online da Sabores Naza – docinhos, paçoca caseira, trufas e toffee." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style-index.css">
-  <style>
     :root {
       --vinho: #6e1e1e;
       /* cor base do logo */
@@ -391,155 +377,77 @@
     .mobile.open {
       display: block
     }
-  </style>
-</head>
 
-<body>
-  <header class="header">
-    <nav class="nav">
-      <a class="brand" href="#topo">
-        <img src="assets/img/saboresnaza.jpeg" alt="Logo Sabores Naza" />
-        <span>Sabores Naza</span>
-      </a>
-      <div class="menu-container">
-        <ul class="menu-list">
-            <li><a href="index.html">Inicial</a></li>
-            
-            <li class="dropdown">
-                <a href="#produtos">Produtos</a>
-                <div class="dropdown-content">
-                    <a href="cat-produtos.html">Salgados</a>
-                    <a href="cat-produtos2.html">Doces</a>
-                    <a href="cat-produtos3.html">Bebidas</a>
-                    <a href="cat-produtos4.html">Salgadinhos</a>
-                    <a href="#outros">Outros</a>
-                </div>
-            </li>
-            
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#contato">Contato</a></li>
-        </ul>
-    </div>
-    </nav>
-    <div class="mobile" role="dialog" aria-modal="true">
-      <a href="#produtos" onclick="this.closest('.mobile').classList.remove('open')">Produtos</a>
-      <a href="#sobre" onclick="this.closest('.mobile').classList.remove('open')">Sobre</a>
-      <a href="#contato" onclick="this.closest('.mobile').classList.remove('open')">Contato</a>
-    </div>
-  </header>
+/* menu */
+.top-menu {
+    background-color: #2c3e50;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
 
-  <main id="topo">
-    <section class="hero">
-      <div class="hero-inner">
-        <div>
-          <span class="kicker">Feito com carinho</span>
-          <h1>Nossos Salgadinhos</h1>
+.menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
 
-          <div class="cta">
-            <a href="#produtos" class="btn btn-primary">Ver cardápio</a>
+.menu-list {
+    list-style: none;
+    display: flex;
+    position: relative;
+}
 
-          </div>
-        </div>
-        <figure>
-          <img src="assets/img/logodireito.jpeg" alt="Sabores Naza" />
-        </figure>
-      </div>
-    </section>
+.menu-list li {
+    position: relative;
+}
 
-    <section id="produtos">
-      <div class="wrap-2">
-        <div class="section-title">
-          <h2>Cardápio em destaque</h2>
-          <small>Atualizado semanalmente</small>
-        </div>
-        <div class="grid">
-          <article class="card">
-            <img src="assets/img/torcida.jpeg" alt="torcida" />
-            <div class="card-body">
-              <h3>Torcida</span></h3>
-              <p class="price">R$ 2,50 / unidade</p>
-              <p>Torcida de varios sabores.</p>
+.menu-list a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 20px 25px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-list a:hover {
+    background-color: #34495e;
+}
 
 
-            </div>
-          </article>
+        /* Dropdown styles */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
 
-          <article class="card">
-            <img src="assets/img/Salgadinhos.jpeg" alt="Salgadinhos Rabitos" />
-            <div class="card-body">
-              <h3>Salgadinhos Rabitos</span></h3>
-              <p class="price">R$ 3,00 / unidade</p>
-              <p>Salgadinhos varios sabores Rabitos.</p>
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 20px;
+            display: block;
+            border-bottom: 1px solid #eee;
+        }
 
-            </div>
-          </article>
+        .dropdown-content a:hover {
+            background-color: #f8f9fa;
+            color: #2c3e50;
+        }
 
-          <article class="card">
-            <img src="assets/img/fitisco.jpg" alt="Salgadinhos fitisco" />
-            <div class="card-body">
-              <h3>Salgadinhos fitisco</span></h3>
-              <p class="price">R$ 3,50 / unidade</p>
-              <p>Se refresque</p>
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
 
-
-
-            </div>
-          </article>
-
-
-
-
-
-
-        </div>
-        </article>
-      </div>
-      </div>
-    </section>
-
-
-
-
-   
-        </form>
-        <div class="social">
-          <h3 style="margin-top:0; color:var(--vinho)">Redes & contato</h3>
-          <a href="#" aria-label="WhatsApp">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M20.52 3.48A11.94 11.94 0 0 0 12.05 0C5.49 0 .17 5.32.17 11.88c0 2.1.55 4.14 1.6 5.96L0 24l6.36-1.66a11.87 11.87 0 0 0 5.69 1.45h.01c6.56 0 11.88-5.32 11.88-11.88 0-3.18-1.24-6.17-3.42-8.43Zm-8.47 18.2h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.77.98 1.01-3.67-.24-.38a9.87 9.87 0 0 1-1.52-5.29C2.12 6.41 6.47 2.06 12.05 2.06a9.92 9.92 0 0 1 7.04 2.92 9.83 9.83 0 0 1 2.92 7.03c0 5.58-4.35 9.93-9.96 9.93Zm5.47-7.42c-.3-.15-1.77-.86-2.05-.96-.28-.1-.48-.15-.69.15-.21.3-.79.96-.97 1.16-.18.2-.36.22-.66.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.14-.14.3-.36.45-.54.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.07-.15-.69-1.65-.94-2.27-.25-.6-.5-.52-.69-.53l-.58-.01c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.88 1.21 3.08.15.2 2.09 3.19 5.07 4.47.7.3 1.25.47 1.68.6.71.23 1.35.2 1.86.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35Z" />
-            </svg>
-            WhatsApp: (11) 90000-0000
-          </a>
-          <a href="#" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M17.5 0h-11A6.5 6.5 0 0 0 0 6.5v11A6.5 6.5 0 0 0 6.5 24h11a6.5 6.5 0 0 0 6.5-6.5v-11A6.5 6.5 0 0 0 17.5 0Zm4.5 17.5A4.5 4.5 0 0 1 17.5 22h-11A4.5 4.5 0 0 1 2 17.5v-11A4.5 4.5 0 0 1 6.5 2h11A4.5 4.5 0 0 1 22 6.5v11ZM12 5.8a6.2 6.2 0 1 0 0 12.4A6.2 6.2 0 0 0 12 5.8Zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM18.4 4.8a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8Z" />
-            </svg>
-            @saboresnaza
-          </a>
-          <a href="mailto:contato@saboresnaza.com" aria-label="Email">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M22 4H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm-1.4 4.25-7.64 5.73a2 2 0 0 1-2.38 0L2.94 8.25a1 1 0 1 1 1.2-1.6L12 11l7.86-4.35a1 1 0 1 1 1.2 1.6Z" />
-            </svg>
-            contato@saboresnaza.com
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    © <span id="year"></span> Sabores Naza — Projeto escolar. Todos os direitos reservados.
-  </footer>
-
-  <script>
-    // Ano automático no rodapé
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-
-</html>
-
-<!--verificar o que vai fica na página, mudar o conteudo forme a necessidade e deletar aquilo que não precisa.-->
+        /* Seta indicativa no item Produtos */
+        .dropdown > a::after {
+            content: "▼";
+            font-size: 10px;
+            margin-left: 8px;
+        }
+  
