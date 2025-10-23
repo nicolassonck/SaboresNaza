@@ -12,6 +12,12 @@
    <link rel="stylesheet" href="style-index.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+<style>
+    p {
+      font-size: 24px; /* Define o tamanho da fonte */
+    }
+  </style>
+
 </head>  
 
 <body>
@@ -77,7 +83,7 @@
         <div>
           <span class="kicker">Feito com carinho</span>
           <h1>Sabores Naza</h1>
-          <p>Peça online nossas delícias: paçoca caseira, trufas de chocolate branco e toffee de morango. Entregamos na
+          <p class="kicker-white">Peça online nossas delícias: paçoca caseira, trufas de chocolate branco e toffee de morango. Entregamos na
             escola e na região.</p>
           <div class="cta">
             <a href="#produtos" class="btn btn-primary">Ver cardápio</a>
@@ -147,17 +153,19 @@
 
     <section id="sobre">
       <div class="">
-        <div class="blob">
+        <div class="">
         </div>
         <div>
-          <h2 style="color:var(--vinho); margin-top:0">Sobre a Sabores Naza</h2>
+          <h2 style="color:var(--vinho); margin: top 0; -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: #000;
+          font-size: 34px;">Sobre a Sabores Naza</h2>
           <p style="text-align:left"></p>
-          <p>Projeto escolar criado para praticar empreendedorismo, design e tecnologia. Nós produzimos e divulgamos
-            doces artesanais e administramos os pedidos de forma simples e organizada.</p>
-          <ul>
-            <li>Produção própria e ingredientes selecionados;</li>
-            <li>Retirada na escola ou entrega combinada;</li>
-            <li>Transparência nos preços e no preparo.</li>
+          <p><b>Projeto escolar criado para praticar empreendedorismo, design e tecnologia. Nós produzimos e divulgamos
+            doces artesanais e administramos os pedidos de forma simples e organizada.</b></p>
+          <ul class="kicker-white">
+            <li style="font-size: 20px;">Produção própria e ingredientes selecionados;</li>
+            <li style="font-size: 20px;">Retirada na escola ou entrega combinada;</li>
+            <li style="font-size: 20px;">Transparência nos preços e no preparo.</li>
           </ul>
 
         </div>
@@ -191,7 +199,7 @@
   </main>
 
   <footer>
-    © <span id="year"></span> Sabores Naza — Projeto escolar. Todos os direitos reservados.
+    © <span id="year"></span> <b>Sabores Naza — Projeto escolar. Todos os direitos reservados.</b>
   </footer>
 
   <script>
